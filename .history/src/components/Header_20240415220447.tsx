@@ -71,4 +71,18 @@ const DarkmodeBtn = styled.button`
   margin-right: 0.5rem;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
+  &:hover {
+    color: #fd6cfd;
+  }
+  &:active {
+    background-color: white;
+    border-radius: 1rem 1rem 0rem 0rem;
+    font-weight: bold;
+  }
+  &.after {
+    color: #fd6cfd;
+    background-color: white;
+    border-radius: 1rem 1rem 0rem 0rem;
+    font-weight: bold;
+  }
 `;
