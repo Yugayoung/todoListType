@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Todo from './Todo';
 import AddTodo from './AddTodo';
-import { useFilter } from '../context/FilterContext';
 
 interface TodoItem {
   id: string;
@@ -10,7 +9,6 @@ interface TodoItem {
 }
 
 export default function TodoList() {
-  const { selectedFilter } = useFilter();
   const [todoList, setTodoList] = useState<TodoItem[]>([]);
 
   useEffect(() => {
@@ -46,16 +44,9 @@ export default function TodoList() {
     localStorage.setItem('todoList', JSON.stringify(updatedTodoList));
   };
 
-  const filteredTodoList = todoList.filter((todo) => {
-    if (selectedFilter === 'All') return true;
-    if (selectedFilter === 'Active') return todo.status === 'active';
-    if (selectedFilter === 'Done') return todo.status === 'done';
-    return false;
-  });
-
   return (
     <div>
-      {filteredTodoList.map((todo) => (
+      {todoList.map((todo) => (
         <Todo
           key={todo.id}
           id={todo.id}

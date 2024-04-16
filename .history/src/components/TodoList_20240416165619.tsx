@@ -48,7 +48,7 @@ export default function TodoList() {
 
   const filteredTodoList = todoList.filter((todo) => {
     if (selectedFilter === 'All') return true;
-    if (selectedFilter === 'Active') return todo.status === 'active';
+    if (selectedFilter === 'Active') return todo.status === 'Active';
     if (selectedFilter === 'Done') return todo.status === 'done';
     return false;
   });

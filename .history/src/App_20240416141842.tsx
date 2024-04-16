@@ -2,19 +2,20 @@ import React from 'react';
 import Header from './components/Header';
 import TodoList from './components/TodoList';
 import { DarkModeProvider } from './context/DarkModeContext';
-import GlobalStyle from './css/\bGlobalStyles';
-import { FilterProvider } from './context/FilterContext';
+import styled from 'styled-components';
 
 function App() {
   return (
     <DarkModeProvider>
-      <FilterProvider>
-        <GlobalStyle theme={undefined} />
+      <Container>
         <Header />
         <TodoList />
-      </FilterProvider>
+      </Container>
     </DarkModeProvider>
   );
 }
-
+const Container = styled.div`
+  background-color: ${({ theme }) => theme.BACKGROUND};
+  color: ${({ theme }) => theme.MAIN};
+`;
 export default App;

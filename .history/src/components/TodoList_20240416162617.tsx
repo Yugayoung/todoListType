@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Todo from './Todo';
 import AddTodo from './AddTodo';
-import { useFilter } from '../context/FilterContext';
 
 interface TodoItem {
   id: string;
@@ -10,8 +9,8 @@ interface TodoItem {
 }
 
 export default function TodoList() {
-  const { selectedFilter } = useFilter();
   const [todoList, setTodoList] = useState<TodoItem[]>([]);
+  const [selectedFilter, setSelectedFilter] = useState<string>('All');
 
   useEffect(() => {
     const storedTodoList = localStorage.getItem('todoList');
@@ -47,11 +46,19 @@ export default function TodoList() {
   };
 
   const filteredTodoList = todoList.filter((todo) => {
-    if (selectedFilter === 'All') return true;
-    if (selectedFilter === 'Active') return todo.status === 'active';
-    if (selectedFilter === 'Done') return todo.status === 'done';
-    return false;
+    if (selectedFilter === 'All') {
+      return true;
+    } else if (selectedFilter === 'Active') {
+      return todo.status === 'active';
+    } else if (selectedFilter === 'Done') {
+      return todo.status === 'done';
+    }
+    return true;
   });
+
+  const handleFilterClick = (filter: string) => {
+    setSelectedFilter(filter);
+  };
 
   return (
     <div>

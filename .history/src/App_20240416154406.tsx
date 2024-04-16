@@ -3,16 +3,13 @@ import Header from './components/Header';
 import TodoList from './components/TodoList';
 import { DarkModeProvider } from './context/DarkModeContext';
 import GlobalStyle from './css/\bGlobalStyles';
-import { FilterProvider } from './context/FilterContext';
 
 function App() {
   return (
     <DarkModeProvider>
-      <FilterProvider>
-        <GlobalStyle theme={undefined} />
-        <Header />
-        <TodoList />
-      </FilterProvider>
+      <GlobalStyle theme={undefined} />
+      <Header />
+      <TodoList />
     </DarkModeProvider>
   );
 }

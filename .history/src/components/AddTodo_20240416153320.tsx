@@ -26,7 +26,7 @@ export default function AddTodo({ addTodo }: AddTodoProps) {
       addTodo({
         id: uuidv4(),
         text: text,
-        status: 'active',
+        status: 'acitive',
       });
       setText('');
     }

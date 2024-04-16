@@ -9,9 +9,11 @@ function App() {
   return (
     <DarkModeProvider>
       <FilterProvider>
-        <GlobalStyle theme={undefined} />
-        <Header />
-        <TodoList />
+        <>
+          <GlobalStyle theme={undefined} />
+          <Header />
+          <TodoList />
+        </>
       </FilterProvider>
     </DarkModeProvider>
   );

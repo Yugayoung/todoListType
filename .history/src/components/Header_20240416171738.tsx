@@ -25,6 +25,7 @@ export default function Header() {
           {!darkMode && '☀️'}
           {darkMode && '🌙'}
         </DarkmodeBtn>
+        <span>{darkMode.toString()}</span>
       </FilterDiv>
     </header>
   );

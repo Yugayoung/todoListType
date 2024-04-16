@@ -3,7 +3,7 @@ import React from 'react';
 interface TodoProps {
   id: string;
   text: string;
-  status: string;
+  status: boolean;
   handleChange: (id: string) => void;
   handleRemove: (id: string) => void;
 }
@@ -15,6 +15,7 @@ export default function Todo({
   handleChange,
   handleRemove,
 }: TodoProps) {
+  // 삭제 버튼 클릭 시 handleRemove 함수 호출
   const handleClickRemove = () => {
     handleRemove(id);
   };
@@ -24,7 +25,7 @@ export default function Todo({
       <input
         type='checkbox'
         id={id}
-        checked={status === 'done'}
+        checked={status}
         onChange={() => handleChange(id)}
       />
       <label htmlFor={id}>{text}</label>

@@ -4,7 +4,8 @@ import { useDarkMode } from '../context/DarkModeContext';
 import { useFilter } from '../context/FilterContext';
 
 export default function Header() {
-  const { filters, handleFilterClick } = useFilter();
+  const filters = ['All', 'Active', 'Done'];
+  const { handleFilterClick } = useFilter();
   //   filter는 변수명,  filters 배열의 각 요소를 가리킨다.
   const fliterList = filters.map((filter, index) => (
     <FilterLi key={index}>
@@ -25,6 +26,7 @@ export default function Header() {
           {!darkMode && '☀️'}
           {darkMode && '🌙'}
         </DarkmodeBtn>
+        <span>{darkMode.toString()}</span>
       </FilterDiv>
     </header>
   );

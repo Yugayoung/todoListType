@@ -46,16 +46,11 @@ export default function TodoList() {
     localStorage.setItem('todoList', JSON.stringify(updatedTodoList));
   };
 
-  const filteredTodoList = todoList.filter((todo) => {
-    if (selectedFilter === 'All') return true;
-    if (selectedFilter === 'Active') return todo.status === 'active';
-    if (selectedFilter === 'Done') return todo.status === 'done';
-    return false;
-  });
+  const filtered = getFilteredItems(todoList, selectedFilter); // 수정된 부분
 
   return (
     <div>
-      {filteredTodoList.map((todo) => (
+      {filtered.map((todo) => (
         <Todo
           key={todo.id}
           id={todo.id}
@@ -68,4 +63,12 @@ export default function TodoList() {
       <AddTodo addTodo={addTodo} />
     </div>
   );
+}
+
+function getFilteredItems(todos: TodoItem[], filter: string) {
+  // 수정된 부분
+  if (filter === 'all') {
+    return todos;
+  }
+  return todos.filter((todo) => todo.status === filter);
 }

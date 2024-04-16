@@ -1,34 +1,22 @@
 import React from 'react';
-
 interface TodoProps {
   id: string;
   text: string;
-  status: string;
+  status: boolean;
   handleChange: (id: string) => void;
-  handleRemove: (id: string) => void;
 }
 
-export default function Todo({
-  id,
-  text,
-  status,
-  handleChange,
-  handleRemove,
-}: TodoProps) {
-  const handleClickRemove = () => {
-    handleRemove(id);
-  };
-
+export default function Todo({ id, text, status, handleChange }: TodoProps) {
   return (
     <li className='todoContainer'>
       <input
         type='checkbox'
         id={id}
-        checked={status === 'done'}
+        checked={status}
         onChange={() => handleChange(id)}
       />
       <label htmlFor={id}>{text}</label>
-      <button onClick={handleClickRemove}>❌</button>
+      <button>❌</button>
     </li>
   );
 }

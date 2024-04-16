@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDarkMode } from '../context/DarkModeContext';
-import { useFilter } from '../context/FilterContext';
 
 export default function Header() {
-  const { filters, handleFilterClick } = useFilter();
+  const filters = ['All', 'Active', 'Done'];
   //   filter는 변수명,  filters 배열의 각 요소를 가리킨다.
   const fliterList = filters.map((filter, index) => (
     <FilterLi key={index}>
       <FilterBtn onClick={() => handleFilterClick(filter)}>{filter}</FilterBtn>
     </FilterLi>
   ));
+  const [selectedFilter, setSelectedFilter] = useState(filters[0]);
+  const handleFilterClick = (filter: string) => {
+    setSelectedFilter(filter);
+    console.log('Selected Filter:', filter);
+  };
 
   const { darkMode, toggleDarkMode } = useDarkMode();
 
@@ -25,6 +29,7 @@ export default function Header() {
           {!darkMode && '☀️'}
           {darkMode && '🌙'}
         </DarkmodeBtn>
+        <span>{darkMode.toString()}</span>
       </FilterDiv>
     </header>
   );

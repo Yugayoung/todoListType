@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-
 interface TodoItem {
   id: string;
   text: string;
@@ -8,7 +7,7 @@ interface TodoItem {
 }
 
 interface AddTodoProps {
-  addTodo: (todo: TodoItem) => void; // addTodo 함수의 매개변수를 TodoItem으로 변경
+  addTodo: (todo: TodoItem) => void;
 }
 
 export default function AddTodo({ addTodo }: AddTodoProps) {
@@ -21,14 +20,10 @@ export default function AddTodo({ addTodo }: AddTodoProps) {
 
   // 입력값을 투두 리스트에 추가하고 입력 필드를 초기화하는 함수
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault(); // 기본 폼 제출 동작을 막습니다.
     if (text.trim() !== '') {
-      addTodo({
-        id: uuidv4(),
-        text: text,
-        status: 'active',
-      });
-      setText('');
+      addTodo({ id: uuidv4(), text, status: 'active' }); // props로 전달받은 addTodo 함수 호출
+      setText(''); // 투두 추가 후 입력 필드를 비웁니다.
     }
   };
 
