@@ -68,11 +68,14 @@ const FilterBtn = styled.button`
     color: #fd6cfd;
   }
   &:active {
+    background-color: ${({ theme }: { theme: any }) => theme.beige};
+
     border-radius: 1rem 1rem 0rem 0rem;
     font-weight: bold;
   }
   &.after {
     color: #fd6cfd;
+    background-color: ${({ theme }: { theme: any }) => theme.beige};
 
     border-radius: 1rem 1rem 0rem 0rem;
     font-weight: bold;

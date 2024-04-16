@@ -74,8 +74,7 @@ export default function TodoList() {
 }
 
 const TodoUl = styled.ul`
-  background-color: ${({ theme }: { theme: any }) => theme.beige};
-
+  color: ${({ theme }: { theme: any }) => theme.beige};
   margin: 0rem;
   height: 400px;
   padding: 10px 1px;

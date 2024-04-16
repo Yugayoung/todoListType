@@ -64,4 +64,7 @@ const DeleteBtn = styled.button`
   border: none;
   font-size: 1.2rem;
   padding-top: 2px;
+  &:hover {
+    color: red;
+  }
 `;

@@ -55,27 +55,24 @@ export default function TodoList() {
   });
 
   return (
-    <section>
-      <TodoUl>
-        {filteredTodoList.map((todo) => (
-          <Todo
-            key={todo.id}
-            id={todo.id}
-            text={todo.text}
-            status={todo.status}
-            handleChange={() => toggleTodoStatus(todo.id)}
-            handleRemove={() => removeTodo(todo.id)}
-          />
-        ))}
-      </TodoUl>
+    <TodoUl>
+      {filteredTodoList.map((todo) => (
+        <Todo
+          key={todo.id}
+          id={todo.id}
+          text={todo.text}
+          status={todo.status}
+          handleChange={() => toggleTodoStatus(todo.id)}
+          handleRemove={() => removeTodo(todo.id)}
+        />
+      ))}
+    </TodoUl>
       <AddTodo addTodo={addTodo} />
-    </section>
   );
 }
 
 const TodoUl = styled.ul`
-  background-color: ${({ theme }: { theme: any }) => theme.beige};
-
+  background-color: white;
   margin: 0rem;
   height: 400px;
   padding: 10px 1px;

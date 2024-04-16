@@ -38,9 +38,6 @@ export default function Header() {
 const HeaderCss = styled.div`
   background: ${({ theme }: { theme: any }) => theme.main};
   color: ${({ theme }: { theme: any }) => theme.textColor};
-  padding: 0.1rem 1rem;
-  box-shadow: 0 3px 10px rgb(0, 0, 0, 0.2);
-  border-radius: 1rem 1rem 0rem 0rem;
 `;
 const FilterDiv = styled.div`
   display: flex;
@@ -60,7 +57,6 @@ const FilterLi = styled.li`
 
 const FilterBtn = styled.button`
   background-color: transparent;
-  color: ${({ theme }: { theme: any }) => theme.textColor};
   border: none;
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -68,12 +64,13 @@ const FilterBtn = styled.button`
     color: #fd6cfd;
   }
   &:active {
+    background-color: white;
     border-radius: 1rem 1rem 0rem 0rem;
     font-weight: bold;
   }
   &.after {
     color: #fd6cfd;
-
+    background-color: white;
     border-radius: 1rem 1rem 0rem 0rem;
     font-weight: bold;
   }

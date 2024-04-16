@@ -1,15 +1,15 @@
 export const lightTheme = {
   bgColor: '#ffffff',
   textColor: '#000000',
-  main: '#92b6ed',
-  beige: '#ffffff',
+  main: '#fcb56e',
+  gradient: 'linear-gradient(#39598A, #79D7ED)',
 };
 
 export const darkTheme = {
-  bgColor: '#14222a',
+  bgColor: '#cc8d41',
   textColor: '#FFFFFF',
-  main: '#10162d',
-  beige: '#727278',
+  main: '#6B8096',
+  gradient: 'linear-gradient(#091236, #1E215D)',
 };
 
 export const theme = {

@@ -45,6 +45,8 @@ export default function AddTodo({ addTodo }: AddTodoProps) {
 }
 
 const InputForm = styled.form`
+  background-color: ${({ theme }: { theme: any }) => theme.main};
+
   width: 100%;
   display: flex;
   box-shadow: 0 3px 10px rgb(0, 0, 0, 0.2);
@@ -60,8 +62,7 @@ const Input = styled.input`
 `;
 
 const AddBtn = styled.button`
-  background-color: ${({ theme }: { theme: any }) => theme.main};
-  color: ${({ theme }: { theme: any }) => theme.textColor};
+  color: ${({ theme }: { theme: any }) => theme.main};
   border: none;
   font-size: 1.5rem;
   padding: 2px 4px;

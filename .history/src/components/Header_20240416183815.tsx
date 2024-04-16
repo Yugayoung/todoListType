@@ -68,12 +68,13 @@ const FilterBtn = styled.button`
     color: #fd6cfd;
   }
   &:active {
+    background-color: white;
     border-radius: 1rem 1rem 0rem 0rem;
     font-weight: bold;
   }
   &.after {
     color: #fd6cfd;
-
+    background-color: white;
     border-radius: 1rem 1rem 0rem 0rem;
     font-weight: bold;
   }

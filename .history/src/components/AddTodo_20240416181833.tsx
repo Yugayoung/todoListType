@@ -45,23 +45,24 @@ export default function AddTodo({ addTodo }: AddTodoProps) {
 }
 
 const InputForm = styled.form`
+  background-color: transparent;
+
   width: 100%;
   display: flex;
   box-shadow: 0 3px 10px rgb(0, 0, 0, 0.2);
-  border-radius: 0rem 1rem 1rem 1rem;
+  border-radius: 0rem 1rem 1rem 0rem;
 `;
 const Input = styled.input`
   flex: 1 0 auto;
   font-size: 1.3rem;
   border: none;
   border-top: 2px solid gray;
-  border-radius: 0rem 0rem 0rem 1rem;
+  border-radius: 1rem 0rem 0rem 1rem;
   padding: 1rem;
 `;
 
 const AddBtn = styled.button`
-  background-color: ${({ theme }: { theme: any }) => theme.main};
-  color: ${({ theme }: { theme: any }) => theme.textColor};
+  background-color: white;
   border: none;
   font-size: 1.5rem;
   padding: 2px 4px;

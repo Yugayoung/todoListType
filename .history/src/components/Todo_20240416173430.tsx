@@ -9,10 +9,6 @@ interface TodoProps {
   handleRemove: (id: string) => void;
 }
 
-interface TodoLabelProps {
-  status: string;
-}
-
 export default function Todo({
   id,
   text,
@@ -48,9 +44,8 @@ const TodoLi = styled.li`
   margin: 0.5rem;
   border-bottom: 1px solid gray;
 `;
-const TodoLabel = styled.label<TodoLabelProps>`
+const TodoLabel = styled.label`
   flex: 1 1;
-  color: ${({ theme }: { theme: any }) => theme.textColor};
   margin: 0rem 0.5rem;
   /* 비우지 않고 none 으로 하는게 더 좋은가? */
   text-decoration: ${(props) =>
@@ -64,4 +59,7 @@ const DeleteBtn = styled.button`
   border: none;
   font-size: 1.2rem;
   padding-top: 2px;
+  &:hover {
+    color: red;
+  }
 `;

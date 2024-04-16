@@ -60,8 +60,7 @@ const Input = styled.input`
 `;
 
 const AddBtn = styled.button`
-  background-color: ${({ theme }: { theme: any }) => theme.main};
-  color: ${({ theme }: { theme: any }) => theme.textColor};
+  color: ${({ theme }: { theme: any }) => theme.main};
   border: none;
   font-size: 1.5rem;
   padding: 2px 4px;
