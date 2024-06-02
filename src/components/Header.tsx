@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <HeaderCss>
       <div>
-        <h2>Todo-list📝</h2>
+        <h2>Todo-lst📝</h2>
       </div>
       <FilterDiv>
         <FilterUl>{fliterList}</FilterUl>
